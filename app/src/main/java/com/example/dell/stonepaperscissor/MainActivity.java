@@ -2,6 +2,7 @@ package com.example.dell.stonepaperscissor;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -104,43 +105,113 @@ public class MainActivity extends AppCompatActivity {
 
         if (cpuChoice == playerChoice) {
             message = "Draw!";
-            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+            //Toast t = new Toast();
+            final Toast t = Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT);
+            t.show();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    t.cancel();
+                }
+            }, 500);
+
             tv_scoreCard.setText("Score : YOU " + playerScore + " | CPU " + cpuScore);
         }
         if (cpuChoice == "stone" && playerChoice == "paper") {
             playerScore++;
             message = "Paper smashes stone! Your Point!";
-            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+            final Toast t = Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT);
+
+            t.show();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    t.cancel();
+                }
+            }, 500);
             tv_scoreCard.setText("Score : YOU " + playerScore + " | CPU " + cpuScore);
         }
         if (cpuChoice == "stone" && playerChoice == "scissor") {
             cpuScore++;
             message = "Stone breaks scissor! CPU's Point!";
-            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+            final Toast t = Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT);
+
+            t.show();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    t.cancel();
+                }
+            }, 500);
             tv_scoreCard.setText("Score : YOU " + playerScore + " | CPU " + cpuScore);
         }
         if (cpuChoice == "paper" && playerChoice == "stone") {
             cpuScore++;
             message = "Paper smashes stone! CPU's Point!";
-            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+            // Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+            final Toast t = Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT);
+
+            t.show();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    t.cancel();
+                }
+            }, 500);
             tv_scoreCard.setText("Score : YOU " + playerScore + " | CPU " + cpuScore);
         }
         if (cpuChoice == "paper" && playerChoice == "scissor") {
             playerScore++;
             message = "Scissor cuts paper! Your Point!";
-            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+            final Toast t = Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT);
+
+            t.show();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    t.cancel();
+                }
+            }, 500);
             tv_scoreCard.setText("Score : YOU " + playerScore + " | CPU " + cpuScore);
         }
         if (cpuChoice == "scissor" && playerChoice == "paper") {
             cpuScore++;
             message = "Scissor cuts paper! CPU's Point!";
-            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+            final Toast t = Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT);
+
+            t.show();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    t.cancel();
+                }
+            }, 500);
             tv_scoreCard.setText("Score : YOU " + playerScore + " | CPU " + cpuScore);
         }
         if (cpuChoice == "scissor" && playerChoice == "stone") {
             playerScore++;
             message = "Stone breaks scissor! Your Point!";
-            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+            // Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+            final Toast t = Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT);
+
+            t.show();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    t.cancel();
+                }
+            }, 500);
             tv_scoreCard.setText("Score : YOU " + playerScore + " | CPU " + cpuScore);
         }
 
